@@ -1,0 +1,528 @@
+/* TABLE OF CONTENTS
+1. IMPORT CSS RESET
+2. IMPORT FONTS 
+3. STYLING: HEADINGS AND BODY
+4. DEFINING: ANIMATION
+5. STYLING: ANCHOR TAGS
+6. STYLING: ZEN INTRO
+7. STYLING: ZEN SUPPORTING
+8. STYLING:FOOTER
+9. STYLING:ASIDE */
+
+/* RESET IMPORT START */
+@import 'reset.css';
+/* RESET IMPORT END */
+
+/* FONTS IMPORT STARTS*/
+
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* FONTS IMPORT ENDS*/
+
+/* HEADINGS AND BODY STYLING START */
+h1 {
+    width: 100%;
+    font-size: 80px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 150%;
+    font-family: "Permanent Marker", serif;
+    color: #000;
+    text-align: left;
+}
+
+h2 {
+    width: 100%;
+    font-size: 55px;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    line-height: 150%;
+    font-family: "Permanent Marker", serif;
+    color: #000;
+    text-align: left;
+}
+
+h3 {
+    width: 100%;
+    font-size: 50px;
+    font-weight: 400;
+    letter-spacing: -0.05em;
+    line-height: 150%;
+    font-family: "Permanent Marker", serif;
+    color: #000;
+    text-align: left;
+}
+
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #fbf5eb;
+    /* padding: 3rem; */
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* HEADINGS AND BODY STYLING END */
+
+/* ANCHOR TAG STYLING START */
+a {
+    color: black;
+}
+
+a:hover {
+    color: #313131;
+    text-decoration: none;
+}
+
+/* ANCHOR TAG STYLING END */
+
+/* DEFINING ANIMATION START */
+@keyframes fade-in {
+    from {
+        scale: 0;
+        opacity: 0;
+    }
+
+    to {
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+@keyframes colorchangeYellow {
+    20% {
+        background-color: #fac405;
+        border-radius: 1rem;
+        border-color: #fac405;
+        padding: 0.5em;
+    }
+
+    100% {
+        background-color: #fac405;
+        border-radius: 1rem;
+        border-color: #fac405;
+    }
+}
+
+@keyframes colorchangeBlue {
+    20% {
+        background-color: #04add0;
+        border-radius: 1rem;
+        border-color: #04add0;
+        padding: 0.5em;
+    }
+
+    100% {
+        background-color: #04add0;
+        border-radius: 1rem;
+        border-color: #04add0;
+    }
+}
+
+/* DEFINING ANIMATION END */
+
+/* ZEN INTRO STYLING START */
+
+#zen-intro {
+    background-color: #cb9eed;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    /* Put the value as auto for the content to govern the height of the row and not equal height */
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5rem;
+    gap: 4rem;
+    justify-items: center;
+    align-items: center;
+}
+
+header {
+    grid-column: span 2;
+    grid-row: 1;
+}
+
+/* header h1 {
+    grid-column: 1;
+    grid-row: 1;
+} */
+
+header h2 {
+    font-size: 50px;
+    font-weight: 400;
+    /* grid-column: 1;
+    grid-row: 2; */
+    /* background-color: #bfbda7; */
+}
+
+#zen-summary {
+    grid-column: 1;
+    grid-row: 2;
+    position: relative;
+    justify-self: end;
+    align-self: end;
+}
+
+#zen-summary::before {
+    content: "";
+    background-image: url(img/friends-doorscreen.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* display: block; */
+    position: absolute;
+    bottom: 100%;
+    right: 25%;
+    width: 50%;
+    height: 300%;
+}
+
+#zen-preamble {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+/* ZEN INTRO STYLING END */
+
+
+
+/* ZEN SUPPORTING STYLING START */
+
+#zen-supporting {
+    width: 100%;
+    /* padding: 5rem; */
+    box-sizing: border-box;
+    display: grid;
+    /* gap: 2rem; */
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    /* Put the value as auto for the content to govern the height of the row and not equal height */
+    position: relative;
+}
+
+#zen-explanation {
+    /* height: auto; */
+    grid-column: 2;
+    grid-row: 1;
+    background-color: #fac405;
+    padding: 7rem;
+    box-sizing: border-box;
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: entry;
+    position: relative;
+}
+
+#zen-explanation::before {
+    content: "";
+    grid-column: 1/1;
+    grid-row: 1;
+    background-image: url(img/friends-clapper.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: entry;
+    position: absolute;
+    top: 10%;
+    right: 110%;
+    width: 80%;
+    /* Make the background span the full width */
+    height: 80%;
+    /* Make the background span the full height */
+}
+
+#zen-participation {
+    height: auto;
+    grid-column: 1;
+    grid-row: 2;
+    background-color: black;
+    color: white;
+    padding: 7rem;
+    box-sizing: border-box;
+    /* color: #fbf5eb; */
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: entry;
+}
+
+#zen-participation h3 {
+    color: white;
+}
+
+#zen-participation a {
+    color: white;
+}
+
+#zen-participation::after {
+    content: "";
+    grid-column: 2;
+    grid-row: 2;
+    background-image: url(img/friends-cups.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: entry;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+
+#zen-requirements {
+    height: auto;
+    grid-column: 2;
+    grid-row: 3;
+    background-color: #04add0;
+    padding: 7rem;
+    box-sizing: border-box;
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: entry;
+}
+
+#zen-requirements::before {
+    content: "";
+    grid-column: 1;
+    grid-row: 3;
+    background-image: url(img/friends-fountain-02.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: entry;
+    position: absolute;
+    top: 0;
+    right: 105%;
+    width: 90%;
+    height: 100%;
+}
+
+#zen-benefits h3 {
+    color: white;
+}
+
+#zen-benefits {
+    height: auto;
+    grid-column: 1;
+    grid-row: 4;
+    background-color: #e62f30;
+    color: white;
+    padding: 7rem;
+    box-sizing: border-box;
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: entry;
+}
+
+#zen-benefits::after {
+    content: "";
+    grid-column: 1;
+    grid-row: 4;
+    background-image: url(img/friends-smelly-cat.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: entry;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    /* Make the background span the full width */
+    height: 100%;
+    /* Make the background span the full height */
+}
+
+/* FOOTER STYLING START */
+footer {
+    background-color: #fac405;
+    grid-column: span 2;
+    grid-row: 5;
+    text-align: center;
+    height: auto;
+    padding: 2rem;
+    box-sizing: border-box;
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+.zen-validate-html {
+    display: inline-block;
+    width: 7rem;
+    height: 7rem;
+    background-image: url('img/HTML5_1Color_Black.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -9999px;
+    /* Hides any accidental text inside the link */
+    overflow: hidden;
+    /* Ensures no hidden text is visible */
+}
+
+.zen-validate-css {
+    display: inline-block;
+    width: 7rem;
+    height: 7rem;
+    background-image: url('img/css.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -9999px;
+    /* Hides any accidental text inside the link */
+    overflow: hidden;
+    /* Ensures no hidden text is visible */
+}
+
+.zen-license {
+    display: inline-block;
+    width: 7rem;
+    height: 7rem;
+    background-image: url('img/cc.xlarge.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -9999px;
+    /* Hides any accidental text inside the link */
+    overflow: hidden;
+    /* Ensures no hidden text is visible */
+}
+
+.zen-accessibility {
+    display: inline-block;
+    width: 10rem;
+    height: 7rem;
+    background-image: url('img/a11yproject-logo-1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -9999px;
+    /* Hides any accidental text inside the link */
+    overflow: hidden;
+    /* Ensures no hidden text is visible */
+}
+
+.zen-github {
+    display: inline-block;
+    width: 7rem;
+    height: 7rem;
+    background-image: url('img/github-mark.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -9999px;
+    /* Hides any accidental text inside the link */
+    overflow: hidden;
+    /* Ensures no hidden text is visible */
+}
+
+/* FOOTER STYLING END */
+
+/* ZEN SUPPORTING STYLING END */
+
+
+/* ASIDE STYLING START */
+.wrapper {
+    gap: 2rem;
+    width: 100%;
+    padding-bottom: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    text-align: center;
+    /* background-color: #bfbda7; */
+}
+
+.wrapper a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+#design-selection {
+    grid-column: span 2;
+    grid-row: 1;
+    padding: 4rem;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+#design-selection h3 {
+    font-size: 50px;
+    font-weight: 400;
+    letter-spacing: -0.05em;
+    line-height: 150%;
+}
+
+.design-name,
+.designer-name {
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.design-name:hover {
+    animation-name: colorchangeYellow;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    text-decoration: underline;
+    color: black;
+}
+
+.designer-name:hover {
+    animation-name: colorchangeBlue;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    text-decoration: underline;
+    color: black;
+}
+
+#design-archives {
+    grid-column: 1;
+    grid-row: 2;
+    padding: 4rem;
+    box-sizing: border-box;
+}
+
+#zen-resources {
+    grid-column: 2;
+    grid-row: 2;
+    padding: 4rem;
+    box-sizing: border-box;
+    border-left: 1px solid black;
+}
+
+.wrapper h3 {
+    text-align: center;
+    font-size: 30px;
+}
+
+.wrapper a {
+    text-decoration: none;
+}
+
+/* ASIDE STLING END */
